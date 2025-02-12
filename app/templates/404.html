@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <h1 style="font-weight: bold; color: red;">ERROR 404</h1>
+        <img src="https://img.freepik.com/vector-premium/nino-llorando-sentado-suelo_679557-2817.jpg" alt="" style="transform: scale(0.8); margin-top: -80px;">
+        <p style="margin-top: -60px;">La pagina no fue encontrada.....
+        </p>
+        <p style="margin-top: -10px;">
+            Intenta regresar a la pagina anterior o da clic al siguiente botón <hr>
+            <button onclick="regresar()" style="background-color: blue; width: 100px; height: 25px; border: none; color: white; border-radius: 10px; font-size: 16px; margin-top: -20px; cursor: pointer;">INICIO</button>
+        </p>
+    </div>
+</body>
+<script>
+    function regresar(){
+        window.location.href = "/"
+    }
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+ .card{
+    max-width: 350px;
+    max-height: 450px;
+    margin: 0 auto;
+ }
+ .card img{
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+ }
+</style>
+<body>
+    <div class="container mt-4">
+        <div class="col-12 text-center mb-3">
+            <h3>Registro de categorias</h3>
+        </div>
+        <div class="row" id="categorias">
+        </div>
+    </div>
+
+    <script>
+        function cargarCategorias(){
+            fetch('/categoria/api/get/')
+            .then(response => response.json())
+            .then(data => {
+                let div = document.getElementById('categorias');
+                div.innerHTML = '';
+
+                data.forEach(categoria => {
+                    div.innerHTML += `
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="text-center">${categoria.nombre}</h5>
+                            </div>
+                            <div class="card-body mx-auto">
+                                <img src=${categoria.imagen}></img>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+            })
+            .catch(error => console.error("Error al cargar categorías:", error));
+        }
+
+        document.addEventListener("DOMContentLoaded", cargarCategorias);
+    </script>
+</body>
+</html>
