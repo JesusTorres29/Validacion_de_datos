@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 500</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <h1 style="font-weight: bold; color: red;">ERROR 500</h1>
+        <img src="https://cdn-icons-png.flaticon.com/256/6478/6478111.png" alt="" style="transform: scale(0.8); margin-top: -60px;">
+        <p style="margin-top: -20px;">Error del servidor.....
+        </p>
+        <p style="margin-top: -10px;">
+            Intenta regresar a la pagina anterior o da clic al siguiente botón <hr>
+            <button onclick="regresar()" style="background-color: blue; width: 100px; height: 25px; border: none; color: white; border-radius: 10px; font-size: 16px; margin-top: -20px; cursor: pointer;">INICIO</button>
+        </p>
+    </div>
+</body>
+<script>
+    function regresar(){
+        window.location.href = "/"
+    }
+</script>
+</html>
